@@ -1,6 +1,8 @@
 # Install everything that needs to be compiled
 -r compiled.txt
 
+twitter
+
 # Django stuff
 Django>=1.5
 
