@@ -7,13 +7,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a href="{% url 'home' %}" class="brand" href="#">Your Site</a>
+      <a href="{% url 'home' %}" class="brand" href="#">Tweet Bot</a>
       <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li><a href="{% url 'home'%}">Home</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-
         {% if user.is_authenticated %}
         <form class="navbar-form pull-right" action="{% url 'logout' %}" method="get">
           <button type="submit" class="btn">Logout</button>

@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     #url(r'^', include('debug_toolbar_user_panel.urls')),
     url(r'^bad/$', bad),
     # Internal App urls
+    url(r'^users/', include('bot.urls')),
     url(r'', include('base.urls')),
 )
 

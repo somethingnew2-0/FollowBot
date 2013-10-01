@@ -2,18 +2,14 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib.auth import get_user_model
 from base.models import UserProfile
 from twitter import Twitter, OAuth, TwitterHTTPError
-
-OAUTH_TOKEN = 'foo'
-OAUTH_SECRET = 'bar'
-CONSUMER_KEY = 'baz'
-CONSUMER_SECRET = 'bat'
-
-t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
+from tweetbot.settings import *
 
 # Create your views here.
 class HomeView(TemplateView):
     '''Default view for the root.'''
-    template_name = "base/home.html"
+    template_name = "bot/home.html"
+
+    t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
 
     def search_tweets(q, count=100, max_id=None):
         return t.search.tweets(q=q, result_type='recent', count=count, lang="en", max_id=max_id)

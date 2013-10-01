@@ -318,3 +318,8 @@ LOGGING = {
 #CEF_VENDOR = 'Your Company'
 #CEF_VERSION = '0'
 #CEF_DEVICE_VERSION = '0'
+
+OAUTH_TOKEN = 'foo'
+OAUTH_SECRET = 'bar'
+CONSUMER_KEY = 'baz'
+CONSUMER_SECRET = 'bat'
