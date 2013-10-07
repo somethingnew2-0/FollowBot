@@ -3,7 +3,7 @@
 # Install requirements
 pip install -r requirements/local.txt
 # Copy settings file
-cp tweetbot/settings/local-dist.py tweetbot/settings/local.py
+cp followbot/settings/local-dist.py followbot/settings/local.py
 # Sync db
 python manage.py syncdb
 python manage.py migrate

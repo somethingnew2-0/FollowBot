@@ -1,5 +1,5 @@
 ========================================
-Welcome to tweetbot's documentation!
+Welcome to followbot's documentation!
 ========================================
 
 This is a documentation template for a **web application using Django 1.5**.

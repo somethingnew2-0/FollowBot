@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class Keywords(models.Model):
 
-    user = models.OneToOneField(get_user_model(), unique=True,
-        related_name='profile')
+    """user = models.OneToOneField(get_user_model(), unique=True,
+        related_name='profile')"""
 
     # Extra attributes ...
 

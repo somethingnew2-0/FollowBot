@@ -246,7 +246,7 @@ def test(*args, **kwargs):
 
 def get_test_command(unit=1, integration=1, functional=1, selenium=0, all=0):
     command = "python manage.py test -v 2 " \
-            + "--settings=tweetbot.settings.test_settings"
+            + "--settings=followbot.settings.test_settings"
     if all == 0:
         if int(unit) == 0:
             command += " --exclude='unit_tests' "

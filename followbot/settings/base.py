@@ -63,6 +63,7 @@ INTERNAL_APPS = [
     'base',
     # Local apps, referenced via appname
     'functional_tests',
+    'bot',
 ]
 
 INSTALLED_APPS = EXTERNAL_APPS + INTERNAL_APPS

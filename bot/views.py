@@ -2,7 +2,7 @@ from django.views.generic import TemplateView, DetailView
 from django.contrib.auth import get_user_model
 from base.models import UserProfile
 from twitter import Twitter, OAuth, TwitterHTTPError
-from tweetbot.settings import *
+from followbot.settings import *
 
 # Create your views here.
 class HomeView(TemplateView):

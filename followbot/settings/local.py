@@ -7,7 +7,7 @@ from . import base
 
 
 # To extend any settings from settings/base.py here's an example:
-INSTALLED_APPS = base.INSTALLED_APPS + ['django_nose','bot',]
+INSTALLED_APPS = base.INSTALLED_APPS
 
 DATABASES = {
     'default': {
