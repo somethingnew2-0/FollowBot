@@ -1,4 +1,4 @@
-""" Settings for tweetbot """
+""" Settings for followbot """
 
 from .base import *
 try:

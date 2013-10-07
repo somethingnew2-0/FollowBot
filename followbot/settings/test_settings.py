@@ -2,7 +2,7 @@
 """Settings to be used for running tests."""
 import os
 
-from tweetbot.settings import *
+from followbot.settings import *
 
 
 INSTALLED_APPS.append('django_nose')
@@ -14,7 +14,7 @@ PASSWORD_HASHERS = (
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
 SOUTH_TESTS_MIGRATE = False
 
-TEST_RUNNER = 'tweetbot.testrunner.NoseCoverageTestRunner'
+TEST_RUNNER = 'followbot.testrunner.NoseCoverageTestRunner'
 COVERAGE_MODULE_EXCLUDES = [
     'tests$', 'settings$', 'urls$', 'locale$',
     'migrations', 'fixtures', 'admin$', 'django_extensions',

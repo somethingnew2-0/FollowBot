@@ -30,7 +30,7 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 # Defines the views served for root URLs.
-ROOT_URLCONF = 'tweetbot.urls'
+ROOT_URLCONF = 'followbot.urls'
 
 EXTERNAL_APPS = [
     # Django contrib apps
@@ -215,7 +215,7 @@ DEBUG_TOOLBAR_PANELS = (
 FILE_UPLOAD_PERMISSIONS = 0664
 
 # The WSGI Application to use for runserver
-WSGI_APPLICATION = 'tweetbot.wsgi.application'
+WSGI_APPLICATION = 'followbot.wsgi.application'
 
 ##### Auth #####
 LOGIN_URL = reverse_lazy('login')
@@ -296,26 +296,26 @@ INTERNAL_IPS = ('127.0.0.1')
 
 SERVER_EMAIL = "webmaster@example.com"
 DEFAULT_FROM_EMAIL = "webmaster@example.com"
-SYSTEM_EMAIL_PREFIX = "[tweetbot]"
+SYSTEM_EMAIL_PREFIX = "[followbot]"
 
 ## Log settings
 
 LOG_LEVEL = logging.INFO
 HAS_SYSLOG = True
-SYSLOG_TAG = "http_app_tweetbot"  # Make this unique to your project.
+SYSLOG_TAG = "http_app_followbot"  # Make this unique to your project.
 # Remove this configuration variable to use your custom logging configuration
 LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'loggers': {
-        'tweetbot': {
+        'followbot': {
             'level': "DEBUG"
         }
     }
 }
 
 # Common Event Format logging parameters
-#CEF_PRODUCT = 'tweetbot'
+#CEF_PRODUCT = 'followbot'
 #CEF_VENDOR = 'Your Company'
 #CEF_VERSION = '0'
 #CEF_DEVICE_VERSION = '0'

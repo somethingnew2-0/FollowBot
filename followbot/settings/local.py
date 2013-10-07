@@ -85,7 +85,7 @@ LOGGING_CONFIG = None
 LOGGING = {
     'version': 1,
     'loggers': {
-        'tweetbot': {
+        'followbot': {
             'level': "DEBUG"
         }
     }
