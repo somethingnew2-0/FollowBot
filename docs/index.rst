@@ -1,25 +1,24 @@
-========================================
+.. followbot documentation master file, created by
+   sphinx-quickstart on Sun Feb 17 11:46:20 2013.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
 Welcome to followbot's documentation!
-========================================
+====================================================================
 
-This is a documentation template for a **web application using Django 1.5**.
-Feel free to change this to your liking.
-
-
-About
--------------
-
-This project uses `Django <http://www.djangoproject.com/>`_.
-
-Contents
---------
+Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+
+   install
+   deploy
+   tests
+
 
 
 Indices and tables
-------------------
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`

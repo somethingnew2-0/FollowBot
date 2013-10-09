@@ -1,28 +1,9 @@
-# This file pulls in everything a developer needs. If it's a basic package
-# needed to run the site, it belongs in requirements/prod.txt. If it's a
-# package for developers (testing, docs, etc.), it goes in this file.
--r production.txt
+# Local development dependencies go here
+-r base.txt
+coverage==3.6
+django-discover-runner==0.4
+Sphinx
 
-# Deployment
-Fabric
 
-# Testing
-nose
-selenium
-webtest
-django-webtest
-django-nose
-coverage
-django-coverage
-factory_boy
-watchdog
-
-# Shell
-ipython
-
-# Command extensions
-django-extensions
-
-# Werkzeug
-werkzeug
-
+# django-debug-toolbar that works with Django 1.5+
+git+git://github.com/django-debug-toolbar/django-debug-toolbar@7e4ecfd04cfe61b51e1fd6fdf0ce1c800a3ebb3b

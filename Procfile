@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath="$PWD/followbot" config.wsgi:application
