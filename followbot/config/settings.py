@@ -65,6 +65,7 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'allauth.socialaccount.providers.twitter',
     )
     ########## END APP CONFIGURATION
 
@@ -91,7 +92,7 @@ class Common(Configuration):
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
     # Note: This key only used for development and testing.
     #       In production, this is changed to a values.SecretValue() setting
-    SECRET_KEY = "CHANGEME!!!"
+    SECRET_KEY = '=m0d(%5+6zp^wj%wow%y+$^06!3jk@h0w86pe&-rh(l!2lj)e5'
     ########## END SECRET CONFIGURATION
 
     ########## FIXTURE CONFIGURATION
