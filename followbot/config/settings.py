@@ -272,7 +272,7 @@ class Common(Configuration):
 
 
     ########## Your common stuff: Below this line define 3rd party libary settings
-
+    SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
 class Local(Common):
 
