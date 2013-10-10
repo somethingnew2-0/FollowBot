@@ -36,6 +36,4 @@ nosetests.xml
 .pydevproject
 
 # Media and static
-*/media/*/*.jpeg
-*/media/*/*.jpg
-*/media/*/*.png
+*/media/*
