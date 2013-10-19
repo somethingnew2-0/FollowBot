@@ -25,7 +25,6 @@ from configurations import Configuration, values
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 class Common(Configuration):
 
     ########## APP CONFIGURATION
@@ -191,7 +190,7 @@ class Common(Configuration):
 
     # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
     STATICFILES_DIRS = (
-        join(BASE_DIR, '..', 'static'),
+        join(BASE_DIR, 'static'),
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
