@@ -278,6 +278,11 @@ class Common(Configuration):
     ########## Your common stuff: Below this line define 3rd party libary settings
     SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
 
+    # Celery settings  
+    BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+    CELERYBEAT_SCHEDULE = 'djcelery.schedulers.DatabaseScheduler'
+
 class Local(Common):
 
     ########## INSTALLED_APPS
@@ -302,10 +307,6 @@ class Local(Common):
     ########## end django-debug-toolbar
 
     ########## Your local stuff: Below this line define 3rd party libary settings
-    
-    # Celery settings
-    BROKER_URL = 'redis://localhost:6379/0'
-    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 class Production(Common):
 
