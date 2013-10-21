@@ -15,3 +15,5 @@ class Tweet(models.Model):
     tweetId = models.TextField(blank=False, null=False)
     twitterUser = models.TextField(blank=False, null=False)
     
+    def __unicode__(self):
+        return tweetId + " " + twitterUser

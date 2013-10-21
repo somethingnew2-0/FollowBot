@@ -17,3 +17,6 @@ class User(AbstractUser):
 class Follower(models.Model):
     user = models.ForeignKey(User, null=False, blank=False)	
     twitterUser = models.TextField(blank=False, null=False)
+
+    def __unicode__(self):
+        return user.username + " " + twitterUser
