@@ -23,6 +23,9 @@ except ImportError:
 
 from configurations import Configuration, values
 
+import djcelery
+djcelery.setup_loader()
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 class Common(Configuration):
@@ -47,6 +50,7 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+	'djcelery', # Celery for Django
     )
 
     # Apps specific for this project go here.
@@ -297,7 +301,10 @@ class Local(Common):
     ########## end django-debug-toolbar
 
     ########## Your local stuff: Below this line define 3rd party libary settings
-
+    
+    # Celery settings
+    BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 class Production(Common):
 
