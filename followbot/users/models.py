@@ -13,3 +13,7 @@ class User(AbstractUser):
 
     def __unicode__(self):
         return self.username
+
+class Follower(models.Model):
+    user = models.ForeignKey(User, null=False, blank=False)	
+    twitterUser = models.TextField(blank=False, null=False)
