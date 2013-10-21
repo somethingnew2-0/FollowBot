@@ -37,3 +37,5 @@ django-avatar==2.0
 
 
 # Your custom requirements go here
+celery-with-redis==3.0
+django-celery==3.0.23
