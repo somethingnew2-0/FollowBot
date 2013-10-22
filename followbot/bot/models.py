@@ -2,6 +2,15 @@ from django.db import models
 from decimal import Decimal
 from users.models import User, Follower
 
+# Unified lowercase noun and verb phrase keywords
+# that the user has in a query
+class Keyword(models.Model):
+    keyword = models.CharField(max_length=140)
+
+    #bid = models.DecimalField(max_digits=9, decimal_places=2, default=Decimal('0.00'))
+    def __unicode__(self):
+        return self.keyword
+
 # Users search query for favorites
 class Query(models.Model):
 	# Formatted query to how the user wanted
@@ -15,15 +24,6 @@ class Query(models.Model):
 
     def __unicode__(self):
         return self.query
-
-# Unified lowercase keywords that the user 
-# has selected which are in a query
-class Keyword(models.Model):
-    keyword = models.CharField(max_length=140)
-
-    #bid = models.DecimalField(max_digits=9, decimal_places=2, default=Decimal('0.00'))
-    def __unicode__(self):
-        return self.keyword
 
 # Log for favorites done
 class Favorite(models.Model):
