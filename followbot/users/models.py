@@ -9,19 +9,15 @@ from django.utils.translation import ugettext_lazy as _
 
 # Subclass AbstractUser
 class User(AbstractUser):
+	# Access twitter account by 
+	# self.socialaccount_set.get(provider='twitter')
     def __unicode__(self):
         return self.username
 
+# User's twitter followers
 class Follower(models.Model):
     user = models.ForeignKey(User)	
-    twitterUserId = models.CharField(max_length=15)
+    twitterUserId = models.BigIntegerField()
 
     def __unicode__(self):
-        return user.username + " " + twitterUser
-
-class DeltaFollower(models.Model):
-    from bot.models import Tweet
-
-    follower = models.ForeignKey(Follower)
-    favoritedTweet = models.ForeignKey(Tweet)
-    dateFollowed = models.DateField(auto_now_add=True)
+        return user.username + " " + twitterUserId

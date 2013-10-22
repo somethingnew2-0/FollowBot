@@ -1,7 +1,7 @@
 from django.db import models
-from users.models import User
+from users.models import User, Follower
 
-# Create your models here.
+# Keywords that the user has selected
 class Keyword(models.Model):
     keyword = models.CharField(max_length=140)
     user = models.ForeignKey(User)
@@ -9,17 +9,24 @@ class Keyword(models.Model):
     def __unicode__(self):
         return self.keyword
 
-class Tweet(models.Model):
+# Log for favorites done
+class Favorite(models.Model):
     keyword = models.ForeignKey(Keyword)
     user = models.ForeignKey(User)	
     favoritedTime =  models.DateTimeField(auto_now_add=True)
 
-    favorited = models.BooleanField()
-    favoriteDeleted = models.BooleanField()
+    # Was the favorite deleted, not the tweet
+    deleted = models.BooleanField()
 
-    tweetId = models.CharField(max_length=15)
+    tweetId = models.BigIntegerField()
     tweetTime = models.DateTimeField()
-    twitterUserId = models.CharField(max_length=15)
+    twitterUserId = models.BigIntegerField()
     
     def __unicode__(self):
-        return tweetId + " " + twitterUser
+        return tweetId + " " + twitterUserId
+
+# Log for new followers
+class DeltaFollower(models.Model):
+    follower = models.ForeignKey(Follower)
+    favorite = models.ForeignKey(Favorite, blank=True)
+    dateFollowed = models.DateField(auto_now_add=True)
