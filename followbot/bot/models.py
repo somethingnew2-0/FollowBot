@@ -2,23 +2,23 @@ from django.db import models
 from decimal import Decimal
 from users.models import User, Follower
 
-# Users custom search term
-class SearchTerm(models.Model):
-	# Formatted to how the user wanted
-    term = models.CharField(max_length=140)
+# Users custom query
+class Query(models.Model):
+	# Formatted query to how the user wanted
+    query = models.CharField(max_length=140)
     user = models.ForeignKey(User)
     deleted = models.BooleanField(default=False)
 
     #bid = models.DecimalField(max_digits=9, decimal_places=2, default=Decimal('0.00'))
 
     def __unicode__(self):
-        return self.keyword
+        return self.query
 
 # Unified lowercase keywords that the user 
-# has selected which are in a search term
+# has selected which are in a query
 class Keyword(models.Model):
     keyword = models.CharField(max_length=140)
-    term = models.ForeignKey(SearchTerm)
+    term = models.ForeignKey(Query)
 
     #bid = models.DecimalField(max_digits=9, decimal_places=2, default=Decimal('0.00'))
     def __unicode__(self):
@@ -26,8 +26,7 @@ class Keyword(models.Model):
 
 # Log for favorites done
 class Favorite(models.Model):
-    keyword = models.ForeignKey(SearchTerm)
-    user = models.ForeignKey(User)	
+    query = models.ForeignKey(Query)
     favoritedTime =  models.DateTimeField(auto_now_add=True)
 
     # Was the favorite deleted, not the tweet
@@ -38,7 +37,7 @@ class Favorite(models.Model):
     twitterUserId = models.BigIntegerField()
     
     def __unicode__(self):
-        return tweetId + " " + twitterUserId
+        return self.tweetId + " " + self.twitterUserId
 
 # Log for new followers
 class DeltaFollower(models.Model):

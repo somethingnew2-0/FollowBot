@@ -20,4 +20,4 @@ class Follower(models.Model):
     twitterUserId = models.BigIntegerField()
 
     def __unicode__(self):
-        return user.username + " " + twitterUserId
+        return self.user.username + " " + self.twitterUserId
