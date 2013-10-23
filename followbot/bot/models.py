@@ -35,8 +35,8 @@ class Query(models.Model):
 
 # Log for campaigns
 class Campaign(models.Model):
-    startTime = models.DateTimeField(auto_now_add=True)
-    endTime = models.DateTimeField()
+    start_time = models.DateTimeField(auto_now_add=True)
+    end_time = models.DateTimeField()
 
     # Daily campaign cycle number (eg. 1-5)
     cycle = models.IntegerField()
@@ -45,8 +45,8 @@ class Campaign(models.Model):
 # Log for found tweets
 class Tweet(models.Model):
     tweet = models.CharField(max_length=140)
-    tweetId = models.BigIntegerField()
-    twitterUserId = models.BigIntegerField()
+    tweet_id = models.BigIntegerField()
+    twitter_user_id = models.BigIntegerField()
     # Time Tweet was published
     time = models.DateTimeField()
 
@@ -67,16 +67,17 @@ class Favorite(models.Model):
     deleted = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return self.tweet.tweetId + " " + self.tweet.twitterUserId
+        return self.tweet.tweet_id + " " + self.tweet.twitter_user_id
 
 # User's twitter followers
 class Follower(models.Model):
     user = models.ForeignKey(User)  
-    twitterUserId = models.BigIntegerField()
+    twitter_user_id = models.BigIntegerField()
 
     # For delta followers
     favorite = models.ForeignKey(Favorite, blank=True)
-    dateFollowed = models.DateField(auto_now_add=True)
+    # Date follower was added
+    date = models.DateField(auto_now_add=True)
 
     def __unicode__(self):
-        return self.user.username + " " + self.twitterUserId
+        return self.user.username + " " + self.twitter_user_id
