@@ -13,11 +13,3 @@ class User(AbstractUser):
 	# self.socialaccount_set.get(provider='twitter')
     def __unicode__(self):
         return self.username
-
-# User's twitter followers
-class Follower(models.Model):
-    user = models.ForeignKey(User)	
-    twitterUserId = models.BigIntegerField()
-
-    def __unicode__(self):
-        return self.user.username + " " + self.twitterUserId
