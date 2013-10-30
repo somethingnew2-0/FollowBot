@@ -45,11 +45,13 @@ class Campaign(models.Model):
 # Log for found tweets
 class Tweet(models.Model):
     tweet = models.CharField(max_length=140)
-    tweet_id = models.BigIntegerField()
-    twitter_user_id = models.BigIntegerField()
+    tweet_id = models.BigIntegerField(default=0)
+    twitter_user_id = models.BigIntegerField(default=0)
     # Time Tweet was published
     time = models.DateTimeField()
 
+    # Query that searched for this tweet
+    query = models.ForeignKey(Query)
     keywords = models.ManyToManyField(Keyword)
 
     def __unicode__(self):
@@ -57,8 +59,9 @@ class Tweet(models.Model):
 
 # Log for favorites
 class Favorite(models.Model):
-    query = models.ForeignKey(Query)
     tweet = models.ForeignKey(Tweet)
+    # Query that favorited this tweet
+    query = models.ForeignKey(Query)
     campaign = models.ForeignKey(Campaign)
     #Time tweet was favorited
     time =  models.DateTimeField(auto_now_add=True)
@@ -72,7 +75,7 @@ class Favorite(models.Model):
 # User's twitter followers
 class Follower(models.Model):
     user = models.ForeignKey(User)  
-    twitter_user_id = models.BigIntegerField()
+    twitter_user_id = models.BigIntegerField(default=0)
 
     # For delta followers
     favorite = models.ForeignKey(Favorite, blank=True)
