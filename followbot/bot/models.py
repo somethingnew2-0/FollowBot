@@ -51,7 +51,7 @@ class Tweet(models.Model):
     time = models.DateTimeField()
 
     # Query or queries that searched for this tweet
-    query = models.ManyToManyField(Query)
+    queries = models.ManyToManyField(Query)
     keywords = models.ManyToManyField(Keyword)
 
     def __unicode__(self):
