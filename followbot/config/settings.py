@@ -50,14 +50,14 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
-	'djcelery', # Celery for Django
+	    'djcelery', # Celery for Django
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
         # Your stuff: custom apps go here
-	'bot',
+	    'bot',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
